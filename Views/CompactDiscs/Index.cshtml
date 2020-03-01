@@ -1,18 +1,18 @@
 ﻿@model CompactDiscProject.Models.CompactDiscArtistViewModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "CD Records";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Add New Record</a>
 </p>
 
 <form asp-controller="CompactDiscs" asp-action="Index" method="get">
     <p>
-        <select asp-for="ArtistName" asp-items="Model.Artists">
+        Artist: <select asp-for="ArtistName" asp-items="Model.Artists">
             <option value="">All</option>
         </select>
         Title: <input type="text" asp-for="SearchString" />
